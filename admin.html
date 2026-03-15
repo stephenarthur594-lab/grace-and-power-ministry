@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Grace & Power Ministry</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Admin</div>
+  <div style="display:flex; gap:10px; align-items:center;">
+    <a href="index.html" class="btn soft">Back to Site</a>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+
+    <!-- LOGIN -->
+    <div id="admin-login" class="card card-soft">
+      <h2>Admin Login</h2>
+      <p class="muted" style="margin-top:6px;">Only authorized admins can access the dashboard.</p>
+
+      <form id="login-form" style="margin-top:10px;">
+        <input id="login-email" type="email" placeholder="Admin email" required>
+        <input id="login-password" type="password" placeholder="Password" required>
+        <button class="btn primary" type="submit">Sign In</button>
+        <p id="login-msg" class="muted" style="margin-top:10px; font-size:12px;"></p>
+      </form>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="admin-dashboard" class="card card-soft admin-panel" style="display:none; margin-top:18px;">
+
+      <div class="admin-toolbar">
+        <div>
+          <h2 style="margin:0;">Dashboard</h2>
+          <p class="admin-subtitle">Manage appointments, testimonies, and events from one place.</p>
+        </div>
+        <button id="logout-btn" class="btn soft" type="button">Sign Out</button>
+      </div>
+
+      <div class="admin-section">
+        <h3>Appointments</h3>
+        <div id="appointments-list" class="muted">Loading...</div>
+      </div>
+
+      <div class="admin-section">
+        <h3>Pending Testimonies</h3>
+        <div id="pending-testimonies" class="muted">Loading...</div>
+      </div>
+
+      <div class="admin-section">
+        <h3>Approved Testimonies</h3>
+        <div id="approved-testimonies" class="muted">Loading...</div>
+      </div>
+
+      <div class="admin-section">
+        <h3>Events</h3>
+
+        <div class="card card-soft admin-card" style="margin-top:12px;">
+          <h4 style="margin-bottom:8px;">Add New Event</h4>
+          <p class="muted" style="font-size:13px; margin-top:0;">
+            Upload any image size — it will auto-fit on the Events page and can be opened full-size.
+          </p>
+
+          <form id="event-form" style="margin-top:10px;">
+            <input id="ev_title" type="text" placeholder="Event Title" required>
+
+            <div class="two-col">
+              <input id="ev_date" type="date" required>
+              <input id="ev_time" type="text" placeholder="Time (e.g. 7PM - 10PM)">
+            </div>
+
+            <input id="ev_location" type="text" placeholder="Location (optional)">
+            <input id="ev_image" type="file" accept="image/*" required>
+            <textarea id="ev_desc" placeholder="Short description (optional)"></textarea>
+
+            <button id="ev_submit" class="btn primary" type="submit">Publish Event</button>
+            <p id="ev_msg" class="muted" style="margin-top:10px; font-size:12px;"></p>
+          </form>
+        </div>
+
+        <div id="events-list" class="muted" style="margin-top:12px;">Loading events...</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script type="module" src="admin-dashboard.js?v=3"></script>
+</body>
+</html>

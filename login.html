@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login - Grace & Power Ministry</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Admin Login</div>
+  <a href="index.html" class="btn">Back to Site</a>
+</header>
+
+<section class="section">
+  <div class="grid">
+    <div class="card" style="max-width:520px;">
+      <h2>Sign in</h2>
+      <p style="opacity:0.85; margin: 10px 0 20px;">
+        Only authorized admins can access the dashboard.
+      </p>
+
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Admin Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button class="btn" type="submit">Login</button>
+      </form>
+
+      <p id="error" style="margin-top:12px; color:#f0c040;"></p>
+    </div>
+  </div>
+</section>
+
+<script type="module" src="login.js"></script>
+</body>
+</html>
